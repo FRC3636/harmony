@@ -38,10 +38,16 @@ class PollFuture<I, out F>(
             Poll.Pending()
         }
     }
-
 }
 
-fun <O, F> PollFuture<Unit, F>.poll(): Poll<F> = poll(Unit)
+fun <F> PollFuture<Unit, F>.poll(): Poll<F> = poll(Unit)
+fun <F> PollFuture<Unit, F>.startOrPoll(): Poll<F> {
+    return if (next == null) {
+        start()
+    } else {
+        poll()
+    }
+}
 
 sealed class Poll<out F> {
     data class Ready<F>(val future: F) : Poll<F>()
@@ -50,9 +56,16 @@ sealed class Poll<out F> {
             return other is Pending<*>
         }
     }
+
+    fun readyOrNull(): F? {
+        return when (this) {
+            is Ready -> this.future
+            else -> null
+        }
+    }
 }
 
-class PollScope<out I> internal constructor() {
+open class PollScope<out I> internal constructor() {
     suspend fun yield(): I = suspendCoroutine { continuation ->
         val poller = continuation.context[PollFuture]!! as PollFuture<I, *>
         poller.next = continuation

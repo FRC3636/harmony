@@ -4,21 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5650442e-2ebe-42ed-b2b5-d00cd9dd8c78" name="Changes" comment="init project">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/coroutine/PollFuture.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="5650442e-2ebe-42ed-b2b5-d00cd9dd8c78" name="Changes" comment="refactor(coroutines): create package and rename Poller to PollFuture">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/coroutine/Command.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/coroutine/CoroutineScope.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Poller.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Runtime.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/PollerTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/coroutine/PollFuture.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/coroutine/PollFuture.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/coroutine/PollFuture.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager" show_ignored="true" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -64,9 +63,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin File" />
         <option value="JUnit5 Test Class" />
         <option value="Kotlin Class" />
+        <option value="Kotlin File" />
+        <option value="Kotlin Object" />
       </list>
     </option>
   </component>
@@ -105,8 +105,8 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/test/kotlin/coroutine" />
       <recent name="$PROJECT_DIR$/src/main/kotlin/coroutine" />
+      <recent name="$PROJECT_DIR$/src/test/kotlin/coroutine" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="" />
@@ -230,7 +230,7 @@
       <updated>1684196683309</updated>
       <workItem from="1684196684369" duration="16655000" />
       <workItem from="1684214348984" duration="505000" />
-      <workItem from="1684289892552" duration="2063000" />
+      <workItem from="1684289892552" duration="7141000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <created>1684214810797</created>
@@ -239,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684214810797</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="refactor(coroutines): create package and rename Poller to PollFuture">
+      <created>1684292813615</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1684292813615</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,6 +254,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init project" />
-    <option name="LAST_COMMIT_MESSAGE" value="init project" />
+    <MESSAGE value="refactor(coroutines): create package and rename Poller to PollFuture" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(coroutines): create package and rename Poller to PollFuture" />
   </component>
 </project>
