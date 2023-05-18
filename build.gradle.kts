@@ -4,7 +4,7 @@ plugins {
 //    id("edu.wpi.first.NativeUtils") version "2024.0.0" apply false
 }
 
-group = "com.ghsrobo"
+group = "com.ghsrobo.harmony"
 version = "1.0-SNAPSHOT"
 
 val wpiLibVersion = "2023.4.2"

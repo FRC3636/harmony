@@ -1,4 +1,4 @@
-package coroutine
+package com.ghsrobo.harmony.coroutine
 
 object CoroutineScope : PollScope<Unit>() {
     // Join the results of multiple coroutines by running them in parallel until they all complete.

@@ -1,4 +1,4 @@
-package coroutine
+package com.ghsrobo.harmony.coroutine
 
 import org.junit.jupiter.api.Test
 import kotlin.test.*

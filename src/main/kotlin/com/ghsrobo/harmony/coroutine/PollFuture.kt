@@ -1,4 +1,4 @@
-package coroutine
+package com.ghsrobo.harmony.coroutine
 
 import kotlin.coroutines.*
 import kotlin.coroutines.intrinsics.*

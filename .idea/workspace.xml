@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5650442e-2ebe-42ed-b2b5-d00cd9dd8c78" name="Changes" comment="refactor(coroutines): create package and rename Poller to PollFuture">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/coroutine/Command.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/coroutine/CoroutineScope.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
+    <list default="true" id="5650442e-2ebe-42ed-b2b5-d00cd9dd8c78" name="Changes" comment="feat(coroutine): create WPILib command entrypoint">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/coroutine/PollFuture.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/coroutine/PollFuture.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/coroutine/Command.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/ghsrobo/harmony/coroutine/Command.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/coroutine/CoroutineScope.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/ghsrobo/harmony/coroutine/CoroutineScope.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/coroutine/PollFuture.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/ghsrobo/harmony/coroutine/PollFuture.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/coroutine/PollFuture.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/ghsrobo/harmony/coroutine/PollFuture.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,7 +230,7 @@
       <updated>1684196683309</updated>
       <workItem from="1684196684369" duration="16655000" />
       <workItem from="1684214348984" duration="505000" />
-      <workItem from="1684289892552" duration="7141000" />
+      <workItem from="1684289892552" duration="8821000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <created>1684214810797</created>
@@ -246,7 +246,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684292813615</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat(coroutine): create WPILib command entrypoint">
+      <created>1684372074140</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1684372074140</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,6 +262,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init project" />
     <MESSAGE value="refactor(coroutines): create package and rename Poller to PollFuture" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor(coroutines): create package and rename Poller to PollFuture" />
+    <MESSAGE value="feat(coroutine): create WPILib command entrypoint" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(coroutine): create WPILib command entrypoint" />
   </component>
 </project>
