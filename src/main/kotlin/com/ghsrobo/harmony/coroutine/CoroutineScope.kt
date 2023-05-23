@@ -32,6 +32,7 @@ object CoroutineScope : PollScope<Unit>() {
             for (future in futures) {
                 val poll = future.startOrPoll()
                 if (poll is Poll.Ready) {
+                    futures.filter { it !== future }.forEach(PollFuture<Unit, T>::cancel)
                     return poll.future
                 }
             }

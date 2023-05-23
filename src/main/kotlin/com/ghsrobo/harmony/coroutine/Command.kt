@@ -30,3 +30,14 @@ class HarmonyCommand(
         return requirements
     }
 }
+
+suspend fun CoroutineScope.runCommand(command: Command) {
+    command.initialize()
+    do {
+        yield(onCancel = {
+            command.end(true)
+        })
+        command.execute()
+    } while (!command.isFinished)
+    command.end(false)
+}

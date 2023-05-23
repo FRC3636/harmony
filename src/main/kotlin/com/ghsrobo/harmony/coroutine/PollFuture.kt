@@ -1,7 +1,7 @@
 package com.ghsrobo.harmony.coroutine
 
 import kotlin.coroutines.*
-import kotlin.coroutines.intrinsics.*
+import kotlin.coroutines.intrinsics.COROUTINE_SUSPENDED
 
 class PollFuture<I, out F>(
     context: CoroutineContext = EmptyCoroutineContext, block: suspend PollScope<I>.() -> F
@@ -9,6 +9,8 @@ class PollFuture<I, out F>(
     companion object Key : CoroutineContext.Key<PollFuture<*, *>>
 
     private val coroutine = block.createCoroutine(PollScope(), Continuation(context + this) { future = it })
+
+    internal var cancellation: () -> Unit = {}
     internal var next: Continuation<I>? = null
 
     private var future: Result<F>? = null
@@ -26,7 +28,7 @@ class PollFuture<I, out F>(
         }
     }
 
-    // coroutine.Poll the future using the given input.
+    // Poll the future using the given input.
     //
     // Must not be called before `start`.
     fun poll(input: I): Poll<F> {
@@ -37,6 +39,14 @@ class PollFuture<I, out F>(
         } else {
             Poll.Pending()
         }
+    }
+
+    // Cancel the future.
+    //
+    // This is a no-op if the future has not been started.
+    // The future should not be polled after it has been cancelled.
+    fun cancel() {
+        cancellation()
     }
 }
 
@@ -66,9 +76,10 @@ sealed class Poll<out F> {
 }
 
 open class PollScope<out I> internal constructor() {
-    suspend fun yield(): I = suspendCoroutine { continuation ->
+    suspend fun yield(onCancel: () -> Unit = {}): I = suspendCoroutine { continuation ->
         val poller = continuation.context[PollFuture]!! as PollFuture<I, *>
         poller.next = continuation
+        poller.cancellation = onCancel
         COROUTINE_SUSPENDED
     }
 }
