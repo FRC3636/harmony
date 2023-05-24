@@ -18,7 +18,9 @@ object CoroutineScope : PollScope<Unit>() {
                     futures.remove(i)
                 }
             }
-            yield()
+            yield(onCancel = {
+                futures.values.forEach(PollFuture<Unit, T>::cancel)
+            })
         }
 
         return results.map { it!! }
@@ -36,6 +38,9 @@ object CoroutineScope : PollScope<Unit>() {
                     return poll.future
                 }
             }
+            yield(onCancel = {
+                futures.forEach(PollFuture<Unit, T>::cancel)
+            })
         }
     }
 }

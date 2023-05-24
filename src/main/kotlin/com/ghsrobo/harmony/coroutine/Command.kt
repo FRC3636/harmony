@@ -4,7 +4,7 @@ import edu.wpi.first.wpilibj2.command.Command
 import edu.wpi.first.wpilibj2.command.Subsystem
 
 class HarmonyCommand(
-    val requirements: Set<Subsystem> = emptySet(),
+    private val requirements: Set<Subsystem> = emptySet(),
     private val onCancel: () -> Unit = { },
     private val block: suspend CoroutineScope.() -> Unit
 ) : Command {
